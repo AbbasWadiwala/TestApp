@@ -21,4 +21,8 @@ public class Service {
 			
 		}
 	}
+	
+	public HashMap getAccountList() {
+		return accountList;
+	}
 }
