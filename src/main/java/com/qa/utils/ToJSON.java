@@ -5,11 +5,11 @@ import org.json.JSONObject;
 
 
 public class ToJSON {
-	public static void printMapToJSON(Map map) {
-		System.out.println(new JSONObject(map));
+	public static String printMapToJSON(Map map) {
+		return new JSONObject(map).toString();
 	}
 	
-	public static void printOjectToJSON(Object account) {
-		System.out.println(new JSONObject(account));
+	public static String printOjectToJSON(Object account) {		
+		return new JSONObject(account).toString();
 	}
 }

@@ -12,14 +12,13 @@ public class App {
 		serviceObj.addAccount("Rohan", "Maini");
 		serviceObj.addAccount("Michal", "Polish");
 		
-		serviceObj.getAccountInfo(0);
-		serviceObj.getAccountInfo(1);
-		serviceObj.getAccountInfo(2);		
+		System.out.println(serviceObj.getAccountInfo(0));
+		System.out.println(serviceObj.getAccountInfo(1));
+		System.out.println(serviceObj.getAccountInfo(2));		
 		
+		System.out.println(serviceObj.getAccountInfoAsJSON(0));
 		
-		serviceObj.getAccountInfoAsJSON(0);
-		
-		serviceObj.getMapInfoAsJSON();
+		System.out.println(serviceObj.getMapInfoAsJSON());
 		
 
 	}
