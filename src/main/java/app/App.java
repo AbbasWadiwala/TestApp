@@ -1,5 +1,6 @@
 package app;
 
+import Utils.MapToJSON;
 import domain.Service;
 
 public class App {
@@ -14,6 +15,8 @@ public class App {
 		serviceObj.getAccountInfo(0);
 		serviceObj.getAccountInfo(1);
 		serviceObj.getAccountInfo(2);
+		
+		MapToJSON.printMapToJSON(serviceObj.getAccountList());
 		
 
 	}
