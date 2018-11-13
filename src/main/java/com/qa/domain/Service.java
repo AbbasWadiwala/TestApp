@@ -18,39 +18,32 @@ public class Service {
 
 	}
 
-	public void getAccountInfo(int accountNo) {
-		boolean accountFound = false;
+	public String getAccountInfo(int accountNo) {		
 		for (Integer i : accountList.keySet()) {
 			if (i == accountNo) {
-				System.out.printf(
-						"The first name is: %s and the surname is: %s, account number:"
-								+ accountList.get(i).getAccountNum() + "\n",
-						accountList.get(i).getFirstName(), accountList.get(i).getFirstName());
-				accountFound = true;
-				break;
+				return 
+						"The first name is: " + accountList.get(i).getFirstName() + " and the surname is: " + 
+						accountList.get(i).getSurname() + " account number: "
+								+ accountList.get(i).getAccountNum();						
 			}
-		}
-		if (!accountFound) {
-			System.out.println("Account Not Found");
-		}
+		}		
+		return "Account Not Found";
+		
 	}
 
-	public void getAccountInfoAsJSON(int accountNo) {
-		boolean accountFound = false;
+	public String getAccountInfoAsJSON(int accountNo) {
+		
 		for (Integer i : accountList.keySet()) {
 			if (i == accountNo) {
-				ToJSON.printOjectToJSON(accountList.get(i));
-				accountFound = true;
-				break;
+				return ToJSON.printOjectToJSON(accountList.get(i));				
 			}
-		}
-		if (!accountFound) {
-			System.out.println("Account Not Found");
-		}
+		}		
+		return "Account Not Found";
+		
 	}
 
-	public void getMapInfoAsJSON() {
-		ToJSON.printMapToJSON(accountList);
+	public String getMapInfoAsJSON() {
+		return ToJSON.printMapToJSON(accountList);
 	}
 
 	public int getAccountCountForThisFirstName(String firstName) {
