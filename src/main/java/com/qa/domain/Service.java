@@ -30,7 +30,7 @@ public class Service {
 				break;
 			}
 		}
-		if(!accountFound) {
+		if (!accountFound) {
 			System.out.println("Account Not Found");
 		}
 	}
@@ -44,13 +44,22 @@ public class Service {
 				break;
 			}
 		}
-		if(!accountFound) {
+		if (!accountFound) {
 			System.out.println("Account Not Found");
 		}
 	}
 
 	public void getMapInfoAsJSON() {
 		ToJSON.printMapToJSON(accountList);
+	}
+
+	public int getAccountCountForThisFirstName(String firstName) {
+		return 
+				(int) accountList.entrySet()
+				.stream() 				
+				.filter( e -> 
+								e.getValue().getFirstName().equals(firstName))               
+                .count();
 	}
 
 }
